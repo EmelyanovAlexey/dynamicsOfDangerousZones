@@ -1,0 +1,143 @@
+:root {
+    --color-blue-1: #0E51A7;
+    --color-blue-2: #274D7E;
+    --color-blue-3: #05326D;
+    --color-blue-4: #4282D3;
+    --color-blue-5: #6997D3;
+    --color-blue-6: #6997d360;
+
+    --color-white: #fff;
+    --color-black: #000;
+}
+
+body {
+    font-family: 'GT Eesti Pro Text';
+}
+
+
+.container {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* menu */
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: calc(10% - 20px);
+    padding: 10px;
+    background-color: var(--color-blue-1);
+}
+.menu-item {
+    display: block;
+    width: calc(100% - px);
+    margin: 0 auto;
+    margin-top: 1rem;
+    padding: 8px 4px;
+    border-radius: 4px;
+    border: 2px solid var(--color-blue-1);
+    background-color: var(--color-blue-3);
+    transition: 0.3s;
+
+    color: var(--color-white);
+    text-decoration: none;
+    font-size: 14px;
+    text-align: center;
+    font-weight: 600;
+    line-height: 14px;
+    letter-spacing: 0px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.menu-item:hover {
+    color: var(--color-white);
+    border: 2px solid var(--color-white);
+    background-color: transparent;
+}
+.menu-item__active {
+    color: #000;
+    background-color: #fff;
+}
+
+.contant {
+    margin-left: calc(10% + 1rem);
+    width: calc(100% - 10% - 1rem);
+}
+
+h1 {
+    color: var(--color-blue-3);
+}
+
+.title-block {
+    cursor: pointer;
+    width: auto;
+}
+.title-block span {
+    opacity: 0;
+    transition: 0.3s;
+}
+.title-block:hover span {
+    opacity: 1;
+}
+
+/* custom-table */
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.custom-table, .custom-table th, .custom-table td {
+    border: 2px solid var(--color-blue-4);
+}
+.custom-table th, .custom-table td {
+    padding: 10px;
+    text-align: left;
+}
+.custom-table th {
+    background-color: var(--color-blue-5);
+    color: var(--color-white);
+}
+.custom-table tr:nth-child(even) {
+    background-color: var(--color-blue-6);
+}
+
+.custom-table tbody tr {
+    transition: 0.4s;
+}
+.custom-table tbody tr:hover {
+    opacity: 0.9;
+    background-color: #c6d7eec7;
+}
+
+
+/* custom-list */
+.custom-list {
+    list-style: none;
+}
+
+.custom-list li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 8px;
+}
+
+.custom-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    background-image: url('./svg/right-arrow.svg');
+    background-size: cover;
+}
+
+img {
+    -webkit-box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.6);
+    -moz-box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.6);
+    box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.6);
+}
