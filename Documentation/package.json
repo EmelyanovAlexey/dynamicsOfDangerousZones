@@ -1,0 +1,87 @@
+{
+  "name": "8158",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@babel/helper-plugin-utils": "7.14.5",
+    "@redux-requests/axios": "1.1.0",
+    "@redux-requests/core": "1.3.0",
+    "@testing-library/jest-dom": "5.11.4",
+    "@testing-library/react": "11.1.0",
+    "@testing-library/user-event": "12.1.10",
+    "axios": "0.21.0",
+    "clsx": "1.2.1",
+    "connected-react-router": "6.8.0",
+    "date-fns": "2.17.0",
+    "date-holidays": "3.23.8",
+    "dompurify": "3.0.5",
+    "history": "4.10.1",
+    "json-server": "0.17.0",
+    "keycloak-js": "16.1.1",
+    "prop-types": "15.7.2",
+    "react": "17.0.1",
+    "react-datepicker": "4.3.0",
+    "react-dom": "17.0.1",
+    "react-input-mask": "2.0.4",
+    "react-redux": "7.2.2",
+    "react-router": "5.2.0",
+    "react-router-dom": "5.2.0",
+    "react-scripts": "4.0.1",
+    "redux": "4.0.5",
+    "redux-saga": "1.1.3",
+    "redux-smart-actions": "1.0.0",
+    "reselect": "4.0.0",
+    "secure-react-keycloak": "1.0.2",
+    "unique-slug": "2.0.2",
+    "web-vitals": "0.2.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "api": "json-server --watch src/Mock/api.json --routes src/Mock/apiMap.json --port 4003",
+    "lint:fix": "eslint ./src --ext .jsx,.js,.ts,.tsx --quiet --fix --ignore-path ./.gitignore",
+    "lint:format": "prettier  --loglevel warn --write \"./**/*.{js,jsx,ts,tsx,css,md,json}\" ",
+    "lint": "npm run lint:format && npm run lint:fix",
+    "dev": "yarn start"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "7.16.0",
+    "@babel/preset-env": "7.16.0",
+    "@babel/preset-react": "7.16.0",
+    "babel-eslint": "10.1.0",
+    "eslint": "7.14.0",
+    "eslint-config-airbnb": "18.2.1",
+    "eslint-config-prettier": "6.15.0",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-jsx-a11y": "6.4.1",
+    "eslint-plugin-prettier": "3.1.4",
+    "eslint-plugin-react": "7.21.5",
+    "prettier": "2.2.1"
+  },
+  "babel": {
+    "plugins": [
+      [
+        "redux-smart-actions",
+        {
+          "transformTypes": true,
+          "prefixTypes": true,
+          "basePath": "src/Store"
+        }
+      ]
+    ]
+  }
+}

@@ -1,0 +1,109 @@
+.input_block {
+  border-radius: 4px;
+  width: 100%;
+  position: relative;
+  padding: 0px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #d8d8d8;
+  background-color: #fff;
+  transition: 0.3s;
+}
+.input_block:hover {
+  border: 1px solid #868686;
+}
+
+/* .input_block_label {
+  position: absolute;
+  padding: 0px 5px;
+  left: 4px;
+  top: -8px;
+  background-color: #fff;
+  transition: 0.4s;
+
+  font-size: 14px;
+  font-weight: 375;
+  line-height: 14px;
+  letter-spacing: 0em;
+  text-align: left;
+} */
+
+.input_block_label {
+  position: absolute;
+  top: -18px;
+  left: 0;
+
+  font-size: 13px;
+  font-weight: 375;
+  line-height: 14px;
+  letter-spacing: 0px;
+  color: rgba(134, 134, 134, 1);
+}
+
+.input_no_show {
+  display: none;
+}
+
+.input_block_input {
+  width: 1000%;
+}
+
+.input_block_input input {
+  border: 0;
+  width: calc(100% - 20px);
+  padding: 8px 8px;
+  margin-left: 1px;
+
+  font-size: 14px;
+  font-weight: 375;
+  line-height: 14px;
+  letter-spacing: 0em;
+  transition: 0.3s;
+}
+
+.input_block_search {
+  margin: 4px 10px 0 5px;
+  width: 14px;
+}
+
+.input_block_loading {
+  position: absolute;
+  right: 0;
+  margin: 0 10px;
+}
+
+.input_block_search_icon path {
+  stroke: #003c7c;
+}
+
+.input_block input:focus {
+  outline: none;
+}
+
+.input_block_delete {
+  width: 16px;
+  height: 16px;
+  background-color: #6e6e6d;
+  padding: 0px;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: 0;
+}
+
+.input_block_delete:hover {
+  background-color: #0a3c70;
+}
+
+.input_block_delete svg {
+  width: 12px;
+  height: 12px;
+  margin: 0 auto;
+}
+
+.input_block_cross_icon {
+}
+
+.input_block_cross_icon path {
+  stroke: #fff;
+}

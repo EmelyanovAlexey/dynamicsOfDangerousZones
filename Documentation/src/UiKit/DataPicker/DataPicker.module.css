@@ -1,0 +1,368 @@
+:root {
+  --bgc-selected: #003c7c;
+  --bgc-selected-hover: #0a335f;
+  --bgc-cur-date: #efefef;
+  --bgc-period: #fff;
+  --border-period-color: #bebebf;
+  --select-arrow-color: #868686;
+  --select-arrow-header-color: #8c8c8c;
+}
+
+.root {
+  display: flex;
+  align-items: center;
+  font-family: GT Eesti Pro Text;
+}
+
+/* select */
+.select {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  margin-right: 10px;
+  border-radius: 4px;
+  background-color: var(--bgc-period);
+  border: 1px solid var(--border-period-color);
+  cursor: pointer;
+}
+
+.select p {
+  padding: 0;
+  margin: 0;
+
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0em;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.selectArrow {
+  width: 10px;
+  height: 4px;
+  fill: var(--select-arrow-color);
+}
+
+/* curDateRange */
+.curDateRange {
+  display: flex;
+  width: 100%;
+  cursor: pointer;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--bgc-period);
+  padding: 4px 10px;
+  border: 1px solid rgba(204, 204, 204, 1);
+  border-radius: 4px;
+}
+
+.curDateRange p {
+  margin: 0;
+  padding: 0;
+
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+.deleteRange {
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  margin-left: 5px;
+  margin-top: 1px;
+}
+
+/* header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  position: relative;
+}
+
+/* year */
+.year {
+}
+
+.btnYarn {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: 0;
+
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: left;
+  cursor: pointer;
+}
+
+.iconYarn {
+  margin-left: 5px;
+  width: 10px;
+  fill: var(--select-arrow-color);
+  transition: 0.3s;
+}
+
+.iconYarnOpen {
+  transform: rotate(180deg);
+}
+
+/* mouth */
+.mouth {
+}
+
+.btnMount {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: 0;
+
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: left;
+  cursor: pointer;
+}
+
+.iconMount {
+  margin-left: 5px;
+  width: 12px;
+  fill: var(--select-arrow-color);
+  transition: 0.3s;
+}
+
+.iconMountOpen {
+  transform: rotate(180deg);
+}
+
+/* btnsMouthArrow */
+.btnsMouthArrow {
+  display: flex;
+  align-items: center;
+}
+
+button.btnMouthArrow {
+  background-color: transparent;
+  margin: 0;
+  padding: 2px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: 0.3s;
+}
+
+button.btnMouthArrow:hover {
+  border: 1px solid var(--bgc-selected);
+}
+
+.btnDisabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.iconMouthArrowPrev {
+  transform: rotate(90deg);
+  fill: #262626;
+}
+
+.iconMouthArrowNext {
+  transform: rotate(-90deg);
+  fill: #262626;
+}
+
+/* popup */
+.popup {
+  background-color: #fff;
+  position: absolute;
+  width: calc(100% + 14px);
+  left: -7px;
+  height: 245px;
+  top: calc(100% + 10px);
+
+  -webkit-box-shadow: 2px 7px 16px 1px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 2px 7px 16px 1px rgba(34, 60, 80, 0.2);
+  box-shadow: 2px 7px 16px 1px rgba(34, 60, 80, 0.2);
+  border-radius: 0 0 4px 4px;
+}
+.popupContent {
+  padding: 10px 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.btnPopup {
+  width: 21%;
+  padding: 10px 0px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  border: 1px solid #0a3c70;
+  background-color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.btnPopup:hover {
+  background-color: #0a3c70;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* DataPicker */
+.rootDataPicker {
+  border-radius: 4px;
+  border: 1px solid #cccccc;
+  width: 100%;
+  cursor: pointer;
+}
+
+.dataPicker {
+  padding: 3px 5px;
+}
+
+.labelDateInput {
+  position: absolute;
+  padding: 0px 5px;
+  left: 4px;
+  top: -8px;
+  background-color: #fff;
+
+  font-size: 14px;
+  font-weight: 375;
+  line-height: 14px;
+  letter-spacing: 0em;
+  text-align: left;
+  z-index: 1;
+}
+
+.dateInput {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  height: 22px;
+  min-width: 80px;
+}
+
+.dateInput p {
+  width: calc(100% - 20px);
+  padding: 0;
+  margin: 0;
+  border: 0;
+
+  font-size: 12px;
+  font-weight: 375;
+  line-height: 14px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.calendar {
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  margin-right: 4px;
+}
+
+.delete {
+  width: 16px;
+  height: 16px;
+  background-color: var(--color-gray-1);
+  padding: 0px;
+  border-radius: 50%;
+  margin-right: 4px;
+  border: 0;
+  cursor: pointer;
+}
+
+.delete:hover {
+  background-color: #0a3c70;
+}
+
+.delete svg {
+  width: 12px;
+  height: 12px;
+  margin: 0 auto;
+}
+
+.delete:hover .deleteIcon path {
+  stroke: #fff;
+}
+.calendar_icon path {
+  stroke: rgba(134, 134, 134, 1);
+}
+.button_calendar {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+/* data_picker_input */
+.data_picker_input {
+  position: absolute;
+  left: 0;
+  top: 1;
+  width: calc(100% - 40px);
+  height: calc(100% - 10px);
+  z-index: 0;
+  border: 0;
+  font-size: 14px;
+  font-weight: 375;
+  line-height: 14px;
+  letter-spacing: 0em;
+  transition: 0.3s;
+  padding-top: 5px;
+  padding-left: 5px;
+}
+.data_picker_input_block {
+  background-color: #fff;
+}
+.data_picker_input:focus {
+  outline: none;
+}
+.data_picker_input_full {
+  width: calc(100% - 10px);
+}
+.error_holiday {
+  background-color: #0f0f0f;
+  color: #fff;
+  position: absolute;
+  z-index: 2;
+  padding: 5px;
+  border-radius: 4px;
+  margin-top: -30px;
+}
+
+.red_day {
+  background-color: transparent !important;
+  border-radius: 4px;
+  color: #000;
+  opacity: 0.5;
+  transition: 0.3s;
+}
+.red_day:hover {
+  background-color: transparent !important;
+  border: 2px solid var(--color-blue-1);
+}
+.no_click {
+  pointer-events: none;
+  opacity: 0.5;
+}

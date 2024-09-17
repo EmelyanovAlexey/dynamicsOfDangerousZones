@@ -1,0 +1,19 @@
+.marker__checkbox {
+  --marker-size: 1.25em;
+  background-color: var(--color-gray-bg);
+  border-radius: 0.063em;
+  border: 1px solid var(--color-gray-line);
+  display: flex;
+  height: var(--marker-size);
+  width: var(--marker-size);
+}
+
+.checkbox__glyph {
+  visibility: hidden;
+  fill: var(--color-brand-orange);
+  margin: auto;
+}
+
+.marker--checked .checkbox__glyph {
+  visibility: visible;
+}

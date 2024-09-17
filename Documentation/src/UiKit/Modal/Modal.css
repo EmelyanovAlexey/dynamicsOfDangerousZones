@@ -1,0 +1,91 @@
+.modal {
+  align-items: baseline;
+  background-color: #0000008c;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  padding-bottom: 1.429em;
+  padding-top: 1.429em;
+  overflow-x: hidden;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100vw;
+  z-index: 1100;
+}
+
+.Modal {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.Modal_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.Modal_header h2 {
+  margin-right: 10px;
+}
+.Modal_header button {
+  background-color: transparent;
+  padding: 5px;
+  border: 0;
+  cursor: pointer;
+}
+.Modal_close {
+  width: 20px;
+  height: 20px;
+}
+
+.modal_window {
+  background-color: #fff;
+  border-radius: 0.357em;
+  box-shadow: 0 0 0.714em #0000001a;
+  padding: 2.143em;
+}
+
+.modal_window__header {
+  position: relative;
+  min-height: 1.357em;
+}
+
+.modal_window__close_button {
+  background-color: transparent;
+  border: none;
+  font-size: inherit;
+  line-height: 0;
+  padding: 0;
+  position: absolute;
+  right: 0;
+}
+
+.modal_window__close_button:hover {
+  background-color: var(--color-gray-bg);
+}
+
+.modal_window__button_glyph {
+  --glyph-size: 1.357em;
+  --glyph-fill: #00000080;
+}
+
+.modal--hidden {
+  animation: hideModal 300ms ease-out 200ms;
+}
+
+.modal_window--hidden {
+  animation: hideModal 200ms ease-out;
+  opacity: 0;
+}
+
+@keyframes hideModal {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

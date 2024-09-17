@@ -1,0 +1,928 @@
+{
+  "GetCurrentEmployee": {
+    "id": "8306ea47-4b25-ee11-b3d6-0050569a16c1",
+    "fullName": "Емельянов Алексей Алексеевич",
+    "email": "Aleksey.Emelianov@evraz.com",
+    "position": "ВЕДУЩИЙ СПЕЦИАЛИСТ",
+    "department": "УПРАВЛЕНИЕ РАЗРАБОТКИ ИС",
+    "organization": "ООО \"ЕвразТехника ИС\"",
+    "personnelNumber": "07003592",
+    "roleId": 3,
+    "allEmployeePositionsIds": [
+      "8306ea47-4b25-ee11-b3d6-0050569a16c1"
+    ]
+  },
+  "getUsers": [
+    {
+      "employeeId": "f2520887-a955-ec11-b3cb-0050569a16c1",
+      "tabelNumber": "0444689",
+      "domain": "ural.evraz.com",
+      "login": "Login",
+      "email": "test",
+      "lastName": "САФОНОВ",
+      "firstName": "АНДРЕЙ",
+      "middleName": "СЕРГЕЕВИЧ",
+      "organizationCode": "351536",
+      "organizationName": "ООО \"ЕвразТехника ИС\"",
+      "positionId": "d1cc0f9c-379a-ec11-b3ce-0050569a16c1",
+      "positionCode": "50106799",
+      "positionName": "ГЛАВНЫЙ СПЕЦИАЛИСТ",
+      "departmentCode": "50028304",
+      "departmentName": "УПРАВЛЕНИЕ ИС ПРОЦЕССНОГО МЕНЕДЖМЕНТА",
+      "photo": null,
+      "photoS": null
+    },
+    {
+      "employeeId": "f2520887-a955-ec91-b3cb-0050569a16c1",
+      "tabelNumber": "0444689",
+      "domain": "ural.evraz.com",
+      "login": "Login",
+      "email": "test",
+      "lastName": "САФОНОВ",
+      "firstName": "АНДРЕЙ",
+      "middleName": "СЕРГЕЕВИЧ",
+      "organizationCode": "351536",
+      "organizationName": "ООО \"ЕвразТехника ИС\"",
+      "positionId": "d1cc0f9c-379a-ec11-b3ce-0050569a16c1",
+      "positionCode": "50106799",
+      "positionName": "ГЛАВНЫЙ СПЕЦИАЛИСТ",
+      "departmentCode": "50028304",
+      "departmentName": "УПРАВЛЕНИЕ ИС ПРОЦЕССНОГО МЕНЕДЖМЕНТА",
+      "photo": null,
+      "photoS": null
+    },
+    {
+      "employeeId": "f2520887-a955-ec01-b3cb-0050569a16c1",
+      "tabelNumber": "0444689",
+      "domain": "ural.evraz.com",
+      "login": "Login",
+      "email": "test",
+      "lastName": "КОСТЫЛЕВ",
+      "firstName": "АРТЕМ",
+      "middleName": "СЕРГЕЕВИЧ",
+      "organizationCode": "351536",
+      "organizationName": "ООО \"ЕвразТехника ИС\"",
+      "positionId": "d1cc0f9c-379a-ec11-b3ce-0050569a16c1",
+      "positionCode": "50106799",
+      "positionName": "ГЛАВНЫЙ СПЕЦИАЛИСТ",
+      "departmentCode": "50028304",
+      "departmentName": "УПРАВЛЕНИЕ ИС ПРОЦЕССНОГО МЕНЕДЖМЕНТА",
+      "photo": null,
+      "photoS": null
+    }
+  ],
+  "GetFolders": {
+      "count": 2,
+      "page": 1,
+      "pageCount": 1,
+      "items": [
+          {
+              "name": "Новые тесты (Функциональный блок 1)",
+              "isArchived": false,
+              "surnameInitials": "Салимьянов Р.И.",
+              "fullName": "Салимьянов Ринат Ильгизович",
+              "allowedEmployees": [],
+              "id": 29,
+              "created": "2024-06-19T07:14:35.8128107",
+              "updated": "2024-06-19T07:14:35.8128107",
+              "createdBy": "81cbd559-4b25-ee11-b3d6-0050569a16c1",
+              "updatedBy": "81cbd559-4b25-ee11-b3d6-0050569a16c1"
+          },
+          {
+              "name": "тест",
+              "isArchived": false,
+              "surnameInitials": "Салимьянов Р.И.",
+              "fullName": "Салимьянов Ринат Ильгизович",
+              "allowedEmployees": [],
+              "id": 1,
+              "created": "2023-10-23T10:22:01.4417972",
+              "updated": "2023-10-23T10:22:01.4417973",
+              "createdBy": "81cbd559-4b25-ee11-b3d6-0050569a16c1",
+              "updatedBy": "81cbd559-4b25-ee11-b3d6-0050569a16c1"
+          }
+      ]
+  },
+  "GetFolderFilters": [
+    {
+      "name": "CreatedBy",
+      "filterType": 0,
+      "label": "Администратор",
+      "items": [
+        {
+          "value": "8306ea47-4b25-ee11-b3d6-0050569a16c1",
+          "selected": false,
+          "label": "ЕМЕЛЬЯНОВ АЛЕКСЕЙ АЛЕКСЕЕВИЧ"
+        },
+        {
+          "value": "ab3ade53-4b25-ee11-b3d6-0050569a16c1",
+          "selected": false,
+          "label": "БУКИА ГЕОРГИЙ СПАРТАКОВИЧ"
+        },
+        {
+          "value": "bfcad559-4b25-ee11-b3d6-0050569a16c1",
+          "selected": false,
+          "label": "ПРОХОРОВ ДМИТРИЙ ГЕННАДЬЕВИЧ"
+        },
+        {
+          "value": "7dcbd559-4b25-ee11-b3d6-0050569a16c1",
+          "selected": false,
+          "label": "ВИЛКОВ ПАВЕЛ ЮРЬЕВИЧ"
+        },
+        {
+          "value": "81cbd559-4b25-ee11-b3d6-0050569a16c1",
+          "selected": false,
+          "label": "САЛИМЬЯНОВ РИНАТ ИЛЬГИЗОВИЧ"
+        },
+        {
+          "value": "9c8d03b7-7bf2-ee11-b3d7-0050569a16c1",
+          "selected": false,
+          "label": "ПЬЯНКОВ ДАНИЛ СЕРГЕЕВИЧ"
+        },
+        {
+          "value": "d26bc70b-934f-ed11-b3d5-0050569a16c1",
+          "selected": false,
+          "label": "КРАВЧЕНКО МИХАИЛ ВИКТОРОВИЧ"
+        },
+        {
+          "value": "c73ade53-4b25-ee11-b3d6-0050569a16c1",
+          "selected": false,
+          "label": "ТОЛМАЧЕВ ДМИТРИЙ АЛЕКСЕЕВИЧ"
+        }
+      ]
+    },
+    {
+      "name": "Created",
+      "filterType": 3,
+      "label": "Дата создания",
+      "items": []
+    },
+    {
+      "name": "Updated",
+      "filterType": 3,
+      "label": "Дата изменения",
+      "items": []
+    },
+    {
+      "name": "Name",
+      "filterType": 5,
+      "label": "поиск",
+      "items": []
+    }
+  ],
+  "GetProtocols": {
+    "count": 1,
+    "page": 1,
+    "pageCount": 50,
+    "items": [
+        {
+            "id": 96,
+            "name": "Протокол №1 от 30-03-2024 (1)",
+            "isArchived": false,
+            "createdBy": "81cbd559-4b25-ee11-b3d6-0050569a16c1",
+            "creatorShortName": "Салимьянов Р.И.",
+            "created": "2024-03-30T20:59:59",
+            "updated": "2024-05-20T10:39:39.812562",
+            "updatedBy": "81cbd559-4b25-ee11-b3d6-0050569a16c1"
+        }
+    ]
+  },
+  "GetProtocolFilters": [
+    {
+        "name": "Created",
+        "filterType": 3,
+        "label": "Дата создания",
+        "items": []
+    },
+    {
+        "name": "Updated",
+        "filterType": 3,
+        "label": "Дата изменения",
+        "items": []
+    }
+  ],
+  "GetAssignments": [
+    {
+      "leaderExecutionDate": "0001-01-01T00:00:00",
+      "executorExecutionDate": null,
+      "inspectorCheckDate": null,
+      "groupId": 0,
+      "name": "П-1 Протокол № 0 от 24.06.2023 8:47:26 Папка2 от 06/24/2023 08:47:32",
+      "description": "",
+      "subversion": 0,
+      "version": 1,
+      "isArchived": false,
+      "protocolId": 1,
+      "protocol": null,
+      "statusId": 1,
+      "status": null,
+      "companyId": 1,
+      "company": null,
+      "authorId": null,
+      "author": null,
+      "responsibleLeaderId": "023f41c7-8700-47a9-6cb7-08db7568398b",
+      "responsibleLeader": {
+        "employeeId": "00000000-0000-0000-0000-000000000000",
+        "tabelNumber": null,
+        "domain": null,
+        "login": null,
+        "email": null,
+        "lastName": "Администратор",
+        "firstName": null,
+        "middleName": null,
+        "organizationCode": null,
+        "organizationName": null,
+        "positionId": "00000000-0000-0000-0000-000000000000",
+        "positionCode": null,
+        "positionName": null,
+        "departmentCode": null,
+        "departmentName": null,
+        "photo": null,
+        "photoS": null,
+        "isSfrelevant": null,
+        "occupation": null,
+        "personLastModification": "0001-01-01T00:00:00",
+        "positionLastModification": "0001-01-01T00:00:00",
+        "departmentLastModification": "0001-01-01T00:00:00",
+        "organizationLastModification": "0001-01-01T00:00:00",
+        "hireDate": null,
+        "endDate": null,
+        "anyLastModification": null,
+        "protocolFoldersCreatedByNavigation": null,
+        "protocolFoldersUpdatedByNavigation": null,
+        "protocolsCreatedByNavigation": null,
+        "protocolsUpdatedByNavigation": null,
+        "assignmentsCreatedByNavigation": null,
+        "assignmentsUpdatedByNavigation": null,
+        "assignmentsAuthorNavigation": null,
+        "assignmentsResponsibleExecutorNavigation": null,
+        "assignmentsResponsibleLeaderNavigation": null,
+        "assignmentsResponsibleInspectorNavigation": null,
+        "assignmentHistoryAddedResponsibleExecutorNavigation": null,
+        "assignmentHistoryRemovedResponsibleExecutorNavigation": null,
+        "assignmentFilesCreatedByNavigation": null,
+        "assignmentFilesUpdatedByNavigation": null,
+        "assignmentStatusesCreatedByNavigation": null,
+        "assignmentStatusesUpdatedByNavigation": null,
+        "commentsCreatedByNavigation": null,
+        "commentsUpdatedByNavigation": null,
+        "companiesCreatedByNavigation": null,
+        "companiesUpdatedByNavigation": null
+      },
+      "responsibleExecutorId": null,
+      "responsibleExecutor": null,
+      "responsibleInspectorId": null,
+      "responsibleInspector": null,
+      "createdByNavigation": null,
+      "updatedByNavigation": null,
+      "history": null,
+      "comments": null,
+      "files": null,
+      "id": 2,
+      "created": "2023-06-25T10:37:50.6397387",
+      "updated": "2023-06-25T10:37:50.6397387",
+      "removed": null,
+      "createdBy": "29de59f2-fd56-eb11-b3b6-0050569a16c1",
+      "updatedBy": "29de59f2-fd56-eb11-b3b6-0050569a16c1"
+    },
+    {
+      "leaderExecutionDate": "0001-01-01T00:00:00",
+      "executorExecutionDate": null,
+      "inspectorCheckDate": null,
+      "groupId": 0,
+      "name": "П-2 Протокол № 0 от 24.06.2023 8:47:26 Папка2 от 06/24/2023 08:47:32",
+      "description": "",
+      "subversion": 0,
+      "version": 1,
+      "isArchived": false,
+      "protocolId": 1,
+      "protocol": null,
+      "statusId": 1,
+      "status": null,
+      "companyId": 1,
+      "company": null,
+      "authorId": null,
+      "author": null,
+      "responsibleLeaderId": "d9847f56-98b7-4104-11a6-08db75ee03ee",
+      "responsibleLeader": {
+        "employeeId": "00000000-0000-0000-0000-000000000000",
+        "tabelNumber": null,
+        "domain": null,
+        "login": null,
+        "email": null,
+        "lastName": "Администратор",
+        "firstName": null,
+        "middleName": null,
+        "organizationCode": null,
+        "organizationName": null,
+        "positionId": "00000000-0000-0000-0000-000000000000",
+        "positionCode": null,
+        "positionName": null,
+        "departmentCode": null,
+        "departmentName": null,
+        "photo": null,
+        "photoS": null,
+        "isSfrelevant": null,
+        "occupation": null,
+        "personLastModification": "0001-01-01T00:00:00",
+        "positionLastModification": "0001-01-01T00:00:00",
+        "departmentLastModification": "0001-01-01T00:00:00",
+        "organizationLastModification": "0001-01-01T00:00:00",
+        "hireDate": null,
+        "endDate": null,
+        "anyLastModification": null,
+        "protocolFoldersCreatedByNavigation": null,
+        "protocolFoldersUpdatedByNavigation": null,
+        "protocolsCreatedByNavigation": null,
+        "protocolsUpdatedByNavigation": null,
+        "assignmentsCreatedByNavigation": null,
+        "assignmentsUpdatedByNavigation": null,
+        "assignmentsAuthorNavigation": null,
+        "assignmentsResponsibleExecutorNavigation": null,
+        "assignmentsResponsibleLeaderNavigation": null,
+        "assignmentsResponsibleInspectorNavigation": null,
+        "assignmentHistoryAddedResponsibleExecutorNavigation": null,
+        "assignmentHistoryRemovedResponsibleExecutorNavigation": null,
+        "assignmentFilesCreatedByNavigation": null,
+        "assignmentFilesUpdatedByNavigation": null,
+        "assignmentStatusesCreatedByNavigation": null,
+        "assignmentStatusesUpdatedByNavigation": null,
+        "commentsCreatedByNavigation": null,
+        "commentsUpdatedByNavigation": null,
+        "companiesCreatedByNavigation": null,
+        "companiesUpdatedByNavigation": null
+      },
+      "responsibleExecutorId": null,
+      "responsibleExecutor": null,
+      "responsibleInspectorId": null,
+      "responsibleInspector": null,
+      "createdByNavigation": null,
+      "updatedByNavigation": null,
+      "history": null,
+      "comments": null,
+      "files": null,
+      "id": 3,
+      "created": "2023-06-26T02:35:33.2610386",
+      "updated": "2023-06-26T02:35:33.2610386",
+      "removed": null,
+      "createdBy": "29de59f2-fd56-eb11-b3b6-0050569a16c1",
+      "updatedBy": "29de59f2-fd56-eb11-b3b6-0050569a16c1"
+    },
+    {
+      "leaderExecutionDate": "0001-01-01T00:00:00",
+      "executorExecutionDate": null,
+      "inspectorCheckDate": null,
+      "groupId": 0,
+      "name": "П-3",
+      "description": "",
+      "subversion": 0,
+      "version": 1,
+      "isArchived": false,
+      "protocolId": 1,
+      "protocol": null,
+      "statusId": 1,
+      "status": null,
+      "companyId": 1,
+      "company": null,
+      "authorId": null,
+      "author": null,
+      "responsibleLeaderId": "632d7ab5-93cd-4d65-7415-08db75f6f793",
+      "responsibleLeader": {
+        "employeeId": "00000000-0000-0000-0000-000000000000",
+        "tabelNumber": null,
+        "domain": null,
+        "login": null,
+        "email": null,
+        "lastName": "Администратор",
+        "firstName": null,
+        "middleName": null,
+        "organizationCode": null,
+        "organizationName": null,
+        "positionId": "00000000-0000-0000-0000-000000000000",
+        "positionCode": null,
+        "positionName": null,
+        "departmentCode": null,
+        "departmentName": null,
+        "photo": null,
+        "photoS": null,
+        "isSfrelevant": null,
+        "occupation": null,
+        "personLastModification": "0001-01-01T00:00:00",
+        "positionLastModification": "0001-01-01T00:00:00",
+        "departmentLastModification": "0001-01-01T00:00:00",
+        "organizationLastModification": "0001-01-01T00:00:00",
+        "hireDate": null,
+        "endDate": null,
+        "anyLastModification": null,
+        "protocolFoldersCreatedByNavigation": null,
+        "protocolFoldersUpdatedByNavigation": null,
+        "protocolsCreatedByNavigation": null,
+        "protocolsUpdatedByNavigation": null,
+        "assignmentsCreatedByNavigation": null,
+        "assignmentsUpdatedByNavigation": null,
+        "assignmentsAuthorNavigation": null,
+        "assignmentsResponsibleExecutorNavigation": null,
+        "assignmentsResponsibleLeaderNavigation": null,
+        "assignmentsResponsibleInspectorNavigation": null,
+        "assignmentHistoryAddedResponsibleExecutorNavigation": null,
+        "assignmentHistoryRemovedResponsibleExecutorNavigation": null,
+        "assignmentFilesCreatedByNavigation": null,
+        "assignmentFilesUpdatedByNavigation": null,
+        "assignmentStatusesCreatedByNavigation": null,
+        "assignmentStatusesUpdatedByNavigation": null,
+        "commentsCreatedByNavigation": null,
+        "commentsUpdatedByNavigation": null,
+        "companiesCreatedByNavigation": null,
+        "companiesUpdatedByNavigation": null
+      },
+      "responsibleExecutorId": null,
+      "responsibleExecutor": null,
+      "responsibleInspectorId": null,
+      "responsibleInspector": null,
+      "createdByNavigation": null,
+      "updatedByNavigation": null,
+      "history": null,
+      "comments": null,
+      "files": null,
+      "id": 4,
+      "created": "2023-06-26T03:39:38.0726927",
+      "updated": "2023-06-26T03:39:38.0726927",
+      "removed": null,
+      "createdBy": "29de59f2-fd56-eb11-b3b6-0050569a16c1",
+      "updatedBy": "29de59f2-fd56-eb11-b3b6-0050569a16c1"
+    },
+    {
+      "leaderExecutionDate": "0001-01-01T00:00:00",
+      "executorExecutionDate": null,
+      "inspectorCheckDate": null,
+      "groupId": 0,
+      "name": "П-4 Протокол № 0 от 24.06.2023 8:47:26 Папка2 от 06/24/2023 08:47:32",
+      "description": "",
+      "subversion": 0,
+      "version": 1,
+      "isArchived": false,
+      "protocolId": 1,
+      "protocol": null,
+      "statusId": 1,
+      "status": null,
+      "companyId": 1,
+      "company": null,
+      "authorId": null,
+      "author": null,
+      "responsibleLeaderId": "42125bb7-f95d-4ebd-8825-08db75fafd87",
+      "responsibleLeader": {
+        "employeeId": "00000000-0000-0000-0000-000000000000",
+        "tabelNumber": null,
+        "domain": null,
+        "login": null,
+        "email": null,
+        "lastName": "Администратор",
+        "firstName": null,
+        "middleName": null,
+        "organizationCode": null,
+        "organizationName": null,
+        "positionId": "00000000-0000-0000-0000-000000000000",
+        "positionCode": null,
+        "positionName": null,
+        "departmentCode": null,
+        "departmentName": null,
+        "photo": null,
+        "photoS": null,
+        "isSfrelevant": null,
+        "occupation": null,
+        "personLastModification": "0001-01-01T00:00:00",
+        "positionLastModification": "0001-01-01T00:00:00",
+        "departmentLastModification": "0001-01-01T00:00:00",
+        "organizationLastModification": "0001-01-01T00:00:00",
+        "hireDate": null,
+        "endDate": null,
+        "anyLastModification": null,
+        "protocolFoldersCreatedByNavigation": null,
+        "protocolFoldersUpdatedByNavigation": null,
+        "protocolsCreatedByNavigation": null,
+        "protocolsUpdatedByNavigation": null,
+        "assignmentsCreatedByNavigation": null,
+        "assignmentsUpdatedByNavigation": null,
+        "assignmentsAuthorNavigation": null,
+        "assignmentsResponsibleExecutorNavigation": null,
+        "assignmentsResponsibleLeaderNavigation": null,
+        "assignmentsResponsibleInspectorNavigation": null,
+        "assignmentHistoryAddedResponsibleExecutorNavigation": null,
+        "assignmentHistoryRemovedResponsibleExecutorNavigation": null,
+        "assignmentFilesCreatedByNavigation": null,
+        "assignmentFilesUpdatedByNavigation": null,
+        "assignmentStatusesCreatedByNavigation": null,
+        "assignmentStatusesUpdatedByNavigation": null,
+        "commentsCreatedByNavigation": null,
+        "commentsUpdatedByNavigation": null,
+        "companiesCreatedByNavigation": null,
+        "companiesUpdatedByNavigation": null
+      },
+      "responsibleExecutorId": null,
+      "responsibleExecutor": null,
+      "responsibleInspectorId": null,
+      "responsibleInspector": null,
+      "createdByNavigation": null,
+      "updatedByNavigation": null,
+      "history": null,
+      "comments": null,
+      "files": null,
+      "id": 5,
+      "created": "2023-06-26T04:08:27.083992",
+      "updated": "2023-06-26T04:08:27.083992",
+      "removed": null,
+      "createdBy": "29de59f2-fd56-eb11-b3b6-0050569a16c1",
+      "updatedBy": "29de59f2-fd56-eb11-b3b6-0050569a16c1"
+    }
+  ],
+  "GetAssigmentFilters": [
+    {
+        "name": "UserAssignment",
+        "filterType": 1,
+        "label": "Мои поручения",
+        "items": [
+            {
+                "value": "OnlyMine",
+                "selected": true,
+                "label": "Назначены мне"
+            },
+            {
+                "value": "IamAuthor",
+                "selected": false,
+                "label": "Я автор"
+            }
+        ]
+    },
+    {
+        "name": "Status",
+        "filterType": 0,
+        "label": "Статус",
+        "items": [
+            {
+                "value": "1",
+                "selected": false,
+                "label": "Новое"
+            },
+            {
+                "value": "2",
+                "selected": false,
+                "label": "Назначено"
+            },
+            {
+                "value": "3",
+                "selected": false,
+                "label": "В работе"
+            },
+            {
+                "value": "4",
+                "selected": false,
+                "label": "Контроль"
+            },
+            {
+                "value": "6",
+                "selected": false,
+                "label": "Исполнено"
+            },
+            {
+                "value": "7",
+                "selected": false,
+                "label": "Готово"
+            }
+        ]
+    },
+    {
+        "name": "Urgency",
+        "filterType": 1,
+        "label": "Срочность",
+        "items": [
+            {
+                "value": "1",
+                "selected": false,
+                "label": "Не просроченные"
+            },
+            {
+                "value": "0",
+                "selected": false,
+                "label": "Просроченные"
+            }
+        ]
+    },
+    {
+        "name": "Folder",
+        "filterType": 0,
+        "label": "Направление совещания",
+        "items": [
+            {
+                "value": "1",
+                "selected": false,
+                "label": "тест"
+            },
+            {
+                "value": "3",
+                "selected": false,
+                "label": "Тестирование уведомлений (Ринат)"
+            },
+            {
+                "value": "4",
+                "selected": false,
+                "label": "т1"
+            },
+            {
+                "value": "5",
+                "selected": false,
+                "label": "Букиа тест"
+            },
+            {
+                "value": "29",
+                "selected": false,
+                "label": "Новые тесты (Функциональный блок 1)"
+            }
+        ]
+    },
+    {
+        "name": "Created",
+        "filterType": 3,
+        "label": "Дата создания",
+        "items": []
+    },
+    {
+        "name": "ResponsibleLeaderId",
+        "filterType": 0,
+        "label": "ФИО отв.руководителя",
+        "items": [
+            {
+                "value": "4e0100e3-247f-ec11-b3cc-0050569a16c1",
+                "selected": false,
+                "label": "ШЕРСТЮК АЛЕКСЕЙ ВЛАДИМИРОВИЧ"
+            },
+            {
+                "value": "d26bc70b-934f-ed11-b3d5-0050569a16c1",
+                "selected": false,
+                "label": "КРАВЧЕНКО МИХАИЛ ВИКТОРОВИЧ"
+            },
+            {
+                "value": "669d0830-4b25-ee11-b3d6-0050569a16c1",
+                "selected": false,
+                "label": "АНУФРИЕВА НАДЕЖДА АЛЕКСАНДРОВНА"
+            },
+            {
+                "value": "8306ea47-4b25-ee11-b3d6-0050569a16c1",
+                "selected": false,
+                "label": "ЕМЕЛЬЯНОВ АЛЕКСЕЙ АЛЕКСЕЕВИЧ"
+            },
+            {
+                "value": "2b3ade53-4b25-ee11-b3d6-0050569a16c1",
+                "selected": false,
+                "label": "МЕНТЮКОВ КОНСТАНТИН АЛЕКСАНДРОВИЧ"
+            },
+            {
+                "value": "ed45962d-7241-4c29-9c7b-32e4fb0f8534",
+                "selected": false,
+                "label": "САЛИМЬЯНОВ РИНАТ ИЛЬГИЗОВИЧ"
+            },
+            {
+                "value": "ffcb7a99-8982-4be5-8e0f-3f1a5f5d9d41",
+                "selected": false,
+                "label": "МЕНТЮКОВ КОНСТАНТИН АЛЕКСАНДРОВИЧ"
+            }
+        ]
+    },
+    {
+        "name": "ResponsibleExecutor",
+        "filterType": 0,
+        "label": "ФИО отв.исполнитель",
+        "items": [
+            {
+                "value": "4e0100e3-247f-ec11-b3cc-0050569a16c1",
+                "selected": false,
+                "label": "ШЕРСТЮК АЛЕКСЕЙ ВЛАДИМИРОВИЧ"
+            },
+            {
+                "value": "d26bc70b-934f-ed11-b3d5-0050569a16c1",
+                "selected": false,
+                "label": "КРАВЧЕНКО МИХАИЛ ВИКТОРОВИЧ"
+            },
+            {
+                "value": "669d0830-4b25-ee11-b3d6-0050569a16c1",
+                "selected": false,
+                "label": "АНУФРИЕВА НАДЕЖДА АЛЕКСАНДРОВНА"
+            },
+            {
+                "value": "8306ea47-4b25-ee11-b3d6-0050569a16c1",
+                "selected": false,
+                "label": "ЕМЕЛЬЯНОВ АЛЕКСЕЙ АЛЕКСЕЕВИЧ"
+            },
+            {
+                "value": "2b3ade53-4b25-ee11-b3d6-0050569a16c1",
+                "selected": false,
+                "label": "МЕНТЮКОВ КОНСТАНТИН АЛЕКСАНДРОВИЧ"
+            },
+            {
+                "value": "7d2d1008-e4fa-ee11-b3d7-0050569a16c1",
+                "selected": false,
+                "label": "ЖИДАЙКИН ИВАН ВАСИЛЬЕВИЧ"
+            },
+            {
+                "value": "ed45962d-7241-4c29-9c7b-32e4fb0f8534",
+                "selected": false,
+                "label": "САЛИМЬЯНОВ РИНАТ ИЛЬГИЗОВИЧ"
+            },
+            {
+                "value": "ffcb7a99-8982-4be5-8e0f-3f1a5f5d9d41",
+                "selected": false,
+                "label": "МЕНТЮКОВ КОНСТАНТИН АЛЕКСАНДРОВИЧ"
+            }
+        ]
+    },
+    {
+        "name": "ResponsibleInspector",
+        "filterType": 0,
+        "label": "ФИО отв.контролер",
+        "items": [
+            {
+                "value": "4e0100e3-247f-ec11-b3cc-0050569a16c1",
+                "selected": false,
+                "label": "ШЕРСТЮК АЛЕКСЕЙ ВЛАДИМИРОВИЧ"
+            },
+            {
+                "value": "d26bc70b-934f-ed11-b3d5-0050569a16c1",
+                "selected": false,
+                "label": "КРАВЧЕНКО МИХАИЛ ВИКТОРОВИЧ"
+            },
+            {
+                "value": "669d0830-4b25-ee11-b3d6-0050569a16c1",
+                "selected": false,
+                "label": "АНУФРИЕВА НАДЕЖДА АЛЕКСАНДРОВНА"
+            },
+            {
+                "value": "8306ea47-4b25-ee11-b3d6-0050569a16c1",
+                "selected": false,
+                "label": "ЕМЕЛЬЯНОВ АЛЕКСЕЙ АЛЕКСЕЕВИЧ"
+            },
+            {
+                "value": "1b3ade53-4b25-ee11-b3d6-0050569a16c1",
+                "selected": false,
+                "label": "КОСТЫЛЕВ АРТЁМ СЕРГЕЕВИЧ"
+            },
+            {
+                "value": "2b3ade53-4b25-ee11-b3d6-0050569a16c1",
+                "selected": false,
+                "label": "МЕНТЮКОВ КОНСТАНТИН АЛЕКСАНДРОВИЧ"
+            },
+            {
+                "value": "ffcb7a99-8982-4be5-8e0f-3f1a5f5d9d41",
+                "selected": false,
+                "label": "МЕНТЮКОВ КОНСТАНТИН АЛЕКСАНДРОВИЧ"
+            }
+        ]
+    },
+    {
+        "name": "Organization",
+        "filterType": 0,
+        "label": "Предприятие",
+        "items": [
+            {
+                "value": "338a8083-6773-eb11-b3bf-0050569a16c1",
+                "selected": false,
+                "label": "ООО \"ЕвразТехника ИС\""
+            },
+            {
+                "value": "37bec340-52a6-eb11-b3c3-0050569a16c1",
+                "selected": false,
+                "label": "ООО \"ИВЕК\""
+            },
+            {
+                "value": "85f3a7f8-825d-ec11-b3cb-0050569a16c1",
+                "selected": false,
+                "label": "ООО \"Евраз Стил Бокс\""
+            },
+            {
+                "value": "87948b50-daba-ec11-b3ce-0050569a16c1",
+                "selected": false,
+                "label": "ЗАО \"ГМК \"ТИМИР\""
+            },
+            {
+                "value": "31ea62b5-8629-ed11-b3d4-0050569a16c1",
+                "selected": false,
+                "label": "ООО \"НИКОМ\""
+            },
+            {
+                "value": "ed6081ed-6075-e811-9ebb-0050569f165f",
+                "selected": false,
+                "label": "ЧОУ ДПО \"РЦПП \"Евраз-Сибирь\""
+            },
+            {
+                "value": "ee6081ed-6075-e811-9ebb-0050569f165f",
+                "selected": false,
+                "label": "ООО \"Центральная ТЭЦ\""
+            },
+            {
+                "value": "ef6081ed-6075-e811-9ebb-0050569f165f",
+                "selected": false,
+                "label": "ООО \"УК \"ЕВРАЗ Междуреченск\""
+            },
+            {
+                "value": "8096c819-6175-e811-9ebb-0050569f165f",
+                "selected": false,
+                "label": "НЧКУ \"ЦКиИ НТМК\""
+            },
+            {
+                "value": "da030013-44d0-e711-a930-0050569f165f",
+                "selected": false,
+                "label": "АО \"ЦОФ \"Абашевская\""
+            },
+            {
+                "value": "588ee380-d8c7-ea11-8c72-0050569f53c3",
+                "selected": false,
+                "label": "ООО \"КЭТ\""
+            },
+            {
+                "value": "dc8b6813-47cf-e811-ba16-0050569f53c3",
+                "selected": false,
+                "label": "ООО \"ЕВРАЗ Узловая\""
+            }
+        ]
+    },
+    {
+        "name": "Activity",
+        "filterType": 1,
+        "label": "Активность",
+        "items": [
+            {
+                "value": "1",
+                "selected": true,
+                "label": "Активные поручения"
+            },
+            {
+                "value": "0",
+                "selected": false,
+                "label": "Архивные поручения"
+            }
+        ]
+    }
+  ],
+  "GetAssignmentById": {
+    "name": "Поручение-1",
+    "author": {
+      "id": "8306ea47-4b25-ee11-b3d6-0050569a16c1",
+      "fullName": "Емельянов Алексей Алексеевич",
+      "email": "Aleksey.Emelianov@evraz.com",
+      "position": "ВЕДУЩИЙ СПЕЦИАЛИСТ",
+      "department": "УПРАВЛЕНИЕ РАЗРАБОТКИ ИС",
+      "organization": "ООО \"ЕвразТехника ИС\"",
+      "personnelNumber": "07003592",
+      "roleId": 0
+    },
+    "executionDate": "2023-11-02T16:59:59",
+    "company": null,
+    "groupId": 87,
+    "eventDirection": "тест",
+    "responsibleLeaders": [
+      {
+        "employee": {
+          "id": "d26bc70b-934f-ed11-b3d5-0050569a16c1",
+          "fullName": "Кравченко Михаил Викторович",
+          "email": "Mikhail.Kravchenko@raspadskaya.ru",
+          "position": "ГЛАВНЫЙ СПЕЦИАЛИСТ",
+          "department": "ДИРЕКЦИЯ ПО УПРАВЛЕНИЮ РЕЗУЛЬТАТИВНОСТЬЮ",
+          "organization": "ООО \"РУК\"",
+          "personnelNumber": "00150758",
+          "roleId": 0
+        },
+        "executionDate": "2023-11-02T16:59:59"
+      }
+    ],
+    "responsibleExecutors": [
+      {
+        "employee": {
+          "id": "d26bc70b-934f-ed11-b3d5-0050569a16c1",
+          "fullName": "Кравченко Михаил Викторович",
+          "email": "Mikhail.Kravchenko@raspadskaya.ru",
+          "position": "ГЛАВНЫЙ СПЕЦИАЛИСТ",
+          "department": "ДИРЕКЦИЯ ПО УПРАВЛЕНИЮ РЕЗУЛЬТАТИВНОСТЬЮ",
+          "organization": "ООО \"РУК\"",
+          "personnelNumber": "00150758",
+          "roleId": 0
+        },
+        "executionDate": "2023-11-02T16:59:59"
+      }
+    ],
+    "responsibleInspectors": [],
+    "description": "ыфв",
+    "status": 7,
+    "subversion": 0,
+    "version": 1,
+    "protocolId": 1,
+    "protocolInfo": "Протокол №1 от 23-10-2023 (тест)",
+    "isArchived": false,
+    "files": [],
+    "userCanAddComment": true,
+    "protocolCreatedBy": "81cbd559-4b25-ee11-b3d6-0050569a16c1",
+    "folderCreatedBy": "81cbd559-4b25-ee11-b3d6-0050569a16c1",
+    "allowedEmployeesNavigation": [],
+    "id": 87,
+    "created": "2023-10-26T08:45:33.2185369",
+    "updated": "2024-06-17T03:39:16.7140929",
+    "createdBy": "8306ea47-4b25-ee11-b3d6-0050569a16c1",
+    "updatedBy": "8306ea47-4b25-ee11-b3d6-0050569a16c1"
+  }
+}

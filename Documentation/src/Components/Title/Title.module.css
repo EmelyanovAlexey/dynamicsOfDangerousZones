@@ -1,0 +1,8 @@
+.root {
+  width: 100%;
+  padding: 0;
+}
+
+.title {
+  color: var(--color-blue-3);
+}

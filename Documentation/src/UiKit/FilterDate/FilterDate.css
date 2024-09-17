@@ -1,0 +1,33 @@
+.FilterDate {
+  width: 100%;
+  padding: 7px 0;
+  background-color: var(--color-scroll-all);
+  border-radius: 2px;
+}
+.FilterDate_container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.FilterDate_btn__noActive {
+  border: 0;
+  border-radius: 2px;
+  background-color: transparent;
+  transition: 0.3s;
+
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 15px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+.FilterDate_btn__active {
+  background-color: var(--color-blue-1);
+  color: var(--color-white);
+  border: 0;
+  border-radius: 2px;
+}

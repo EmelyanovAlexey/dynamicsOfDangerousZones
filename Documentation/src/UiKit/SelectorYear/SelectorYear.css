@@ -1,0 +1,64 @@
+.SelectorYear {
+  width: 100%;
+  padding: 7px 0;
+  background-color: var(--color-scroll-all);
+  border-radius: 2px;
+}
+.SelectorYear_container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.SelectorYear_btn__noActive {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 15px;
+  letter-spacing: 0em;
+  text-align: center;
+  height: 25px;
+  width: 25%;
+  cursor: pointer;
+  border: 0;
+  border-radius: 2px;
+  background-color: transparent;
+  transition: 0.3s;
+}
+.SelectorYear_btn__noActive:hover {
+  background-color: var(--color-blue-1);
+  color: var(--color-white);
+}
+.SelectorYear_btn__active {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 15px;
+  letter-spacing: 0em;
+  text-align: center;
+
+  height: 25px;
+  width: 25%;
+  cursor: pointer;
+  background-color: var(--color-blue-1);
+  color: var(--color-white);
+  border: 0;
+  border-radius: 2px;
+}
+.SelectorYear_btn__active:hover {
+  background-color: var(--color-blue-1);
+}
+.SelectorYear_btn__noVisible {
+  display: none;
+}
+
+.SelectorYear_btn__arrow {
+  border: 1px solid var(--color-blue-1);
+  border-radius: 4px;
+  height: 25px;
+  width: 25px;
+  cursor: pointer;
+  transform: rotate(90deg);
+}
+.SelectorYear_btn__arrow:last-of-type {
+  transform: rotate(-90deg);
+}

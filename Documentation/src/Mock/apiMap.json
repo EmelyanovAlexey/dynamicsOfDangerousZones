@@ -1,0 +1,11 @@
+{
+  "/api/GetCurrentEmployee": "GetCurrentEmployee",
+  "/api/getUsers": "getUsers",
+  "/api/GetFolders": "GetFolders",
+  "/api/GetFolderFilters": "GetFolderFilters",
+  "/api/GetProtocols": "GetProtocols",
+  "/api/GetProtocolFilters": "GetProtocolFilters",
+  "/api/GetAssignments": "GetAssignments",
+  "/api/GetAssigmentFilters": "GetAssigmentFilters",
+  "/api/GetAssignmentById": "GetAssignmentById"
+}

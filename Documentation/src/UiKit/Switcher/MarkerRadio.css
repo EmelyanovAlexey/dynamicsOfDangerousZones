@@ -1,0 +1,19 @@
+.marker__radio {
+  --marker-size: 1.25em;
+  background-color: var(--color-gray-bg);
+  border-radius: 50%;
+  border: 1px solid var(--color-gray-line);
+  display: flex;
+  height: var(--marker-size);
+  width: var(--marker-size);
+}
+
+.marker--checked.marker__radio:after {
+  background-color: var(--color-brand-orange);
+  border-radius: 50%;
+  content: '';
+  display: block;
+  height: 50%;
+  margin: auto;
+  width: 50%;
+}

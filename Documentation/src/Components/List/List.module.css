@@ -1,0 +1,25 @@
+/* custom-list */
+.root {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-top: 20px;
+}
+
+.root li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 8px;
+}
+
+.root li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  background-image: url('./img/right-arrow.svg');
+  background-size: cover;
+}

@@ -1,0 +1,15 @@
+:root {
+  --color-blue-1: #0E51A7;
+  --color-blue-2: #274D7E;
+  --color-blue-3: #05326D;
+  --color-blue-4: #4282D3;
+  --color-blue-5: #6997D3;
+  --color-blue-6: #6997d360;
+
+  --color-white: #fff;
+  --color-black: #000;
+}
+body {
+  margin: 0;
+  font-family: 'GT Eesti Pro Text';
+}
