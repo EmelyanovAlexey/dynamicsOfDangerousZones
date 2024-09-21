@@ -7,7 +7,7 @@ import createSagaMiddleware from 'redux-saga';
 import { all } from 'redux-saga/effects';
 
 import main from './main';
-import folderPage from './folderPage';
+import post from './post';
 
 /**
  * Объединяет все саги из сторов
@@ -18,7 +18,7 @@ function* rootSaga(...args) {
     // Добавлять root саги из сторов ниже
     main.rootSaga(...args),
 
-    folderPage.rootSaga(...args),
+    post.rootSaga(...args),
   ]);
 }
 
@@ -54,7 +54,7 @@ export default function configureStore(history, host) {
     router: connectRouter(history),
     // Добавлять редюсеры из сторов ниже
     main: main.reducer,
-    folderPage: folderPage.reducer,
+    post: post.reducer,
   });
 
   const sagaMiddleware = createSagaMiddleware();

@@ -5,11 +5,11 @@ import { NavLink } from 'react-router-dom';
 import clsx from 'clsx';
 
 import { ROUTER_LIST } from '../../Shered/const';
-// import PropTypes from 'prop-types';
+import Glyph from '../Glyph';
 
-import styles from './SideBar.module.css';
+import styles from './ContentSlider.module.css';
 
-function SideBar() {
+function ContentSlider() {
   return (
     <div className={styles.root}>
       <div className={styles.logo}>
@@ -24,6 +24,9 @@ function SideBar() {
             className={styles.item_link}
             activeClassName={styles.item_link_active}
           >
+            {link.icon !== undefined && (
+              <Glyph className={styles.icon} name={link.icon} />
+            )}
             {link.title}
           </NavLink>
         ))}
@@ -32,12 +35,4 @@ function SideBar() {
   );
 }
 
-{
-  /* <img
-              className={styles.navIcon}
-              src={require(`../../Assets/images/${navItem.urlIcon}`)}
-              alt={navItem.urlIcon}
-            /> */
-}
-
-export default SideBar;
+export default ContentSlider;

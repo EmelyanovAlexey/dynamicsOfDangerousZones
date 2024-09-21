@@ -6,10 +6,13 @@
   --color-blue-5: #6997D3;
   --color-blue-6: #6997d360;
 
+  --color-gray-1: #646464;
+
   --color-white: #fff;
   --color-black: #000;
 }
 body {
   margin: 0;
   font-family: 'GT Eesti Pro Text';
+  background-color: #f0f0f0;
 }
