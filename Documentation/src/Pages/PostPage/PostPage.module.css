@@ -7,7 +7,7 @@
   border: 1px solid var(--color-blue-1);
   background-color: #fff;
   width: 100%;
-  padding: 10px;
+  padding: 10px 11px;
 
   -webkit-box-shadow: 0px 0px 15px 0px rgba(34, 60, 80, 0.3);
   -moz-box-shadow: 0px 0px 15px 0px rgba(34, 60, 80, 0.3);
