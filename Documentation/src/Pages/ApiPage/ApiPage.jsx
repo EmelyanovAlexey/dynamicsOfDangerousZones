@@ -17,11 +17,9 @@ function ApiPage({ docs, loading, fetchApi }) {
     <div>
       <Title>API</Title>
       <div className={styles.description}>
-        {docs === null ? (
-          'нет данных'
-        ) : (
-          <ReactOpenApiRenderer specification={docs} />
-        )}
+        {loading && <p>Загрузка ...</p>}
+        {!loading && docs === null && <p>нет данных</p>}
+        {docs !== null && <ReactOpenApiRenderer specification={docs} />}
       </div>
     </div>
   );
