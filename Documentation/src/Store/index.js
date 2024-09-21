@@ -8,6 +8,7 @@ import { all } from 'redux-saga/effects';
 
 import main from './main';
 import post from './post';
+import api from './api';
 
 /**
  * Объединяет все саги из сторов
@@ -19,6 +20,7 @@ function* rootSaga(...args) {
     main.rootSaga(...args),
 
     post.rootSaga(...args),
+    api.rootSaga(...args),
   ]);
 }
 
@@ -55,6 +57,7 @@ export default function configureStore(history, host) {
     // Добавлять редюсеры из сторов ниже
     main: main.reducer,
     post: post.reducer,
+    api: api.reducer,
   });
 
   const sagaMiddleware = createSagaMiddleware();

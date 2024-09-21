@@ -19,7 +19,8 @@ body {
 
 .pages {
   margin-left: calc(var(--width-menu) + 1rem);
-  width: calc(90% - var(--width-menu) - 1rem);
+  width: calc(100% - var(--width-menu) - 1rem - 20px);
+  padding-top: 10px;
 }
 
 @media screen and (max-width: 1200px) {
