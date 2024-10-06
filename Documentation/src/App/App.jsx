@@ -8,11 +8,12 @@ import SideBarContainer from '../Containers/SideBarContainer';
 import StatusContainer from '../Containers/StatusContainer';
 
 // страницы
-import HomePage from '../Pages/HomePage';
-import DescriptionPage from '../Pages/DescriptionPage';
-import ResultPage from '../Pages/ResultPage';
+import HomePageContainer from '../Pages/HomePage/HomePageContainer';
+import DescriptionPageContainer from '../Pages/DescriptionPage/DescriptionPageContainer';
+import ResultPageContainer from '../Pages/ResultPage/ResultPageContainer';
 import PostPageContainer from '../Pages/PostPage/PostPageContainer';
 import ApiPageContainer from '../Pages/ApiPage/ApiPageContainer';
+import StaticticPageContainer from '../Pages/StaticticPage/StaticticPageContainer';
 
 import styles from './App.module.css';
 
@@ -27,11 +28,20 @@ function App() {
       <StatusContainer />
 
       <div className={styles.pages}>
-        <Route exact path="/home" render={() => <HomePage />} />
-        <Route exact path="/description" render={() => <DescriptionPage />} />
-        <Route exact path="/result" render={() => <ResultPage />} />
+        <Route exact path="/home" render={() => <HomePageContainer />} />
+        <Route
+          exact
+          path="/description"
+          render={() => <DescriptionPageContainer />}
+        />
+        <Route exact path="/result" render={() => <ResultPageContainer />} />
         <Route exact path="/post" render={() => <PostPageContainer />} />
         <Route exact path="/api" render={() => <ApiPageContainer />} />
+        <Route
+          exact
+          path="/statistic"
+          render={() => <StaticticPageContainer />}
+        />
       </div>
     </BrowserRouter>
   );

@@ -55,7 +55,7 @@ export const fetchPostAction = createAction(FETCH_POST_TYPE, () => ({
       dispatch(
         addStatusPageAction({
           title: 'Ошибка',
-          description: 'посты не были получены',
+          description: 'Посты не были получены',
           status: 'error',
         }),
       );
@@ -78,6 +78,7 @@ export const inventImgAction = createAction(INVENT_IMG_TYPE, (file) => ({
     },
     onSuccess: (response, action, store) => {
       const { dispatch } = store;
+
       dispatch(saveloadingPostAction(response.data));
       return response;
     },

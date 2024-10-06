@@ -1,8 +1,23 @@
-from fastapi import FastAPI, File, UploadFile
+from fastapi import FastAPI, File, UploadFile, HTTPException, Depends
 from fastapi.responses import StreamingResponse
 from fastapi.middleware.cors import CORSMiddleware
+from sqlalchemy import select, insert, update, join, Integer
+from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker, AsyncSession
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy.sql import func
+from models.models import pages, kpi
+from config import DATABASE_URL
 from PIL import Image, ImageOps
 import io
+from fastapi import Body
+
+# Старт
+# uvicorn main:app --reload
+
+# Свагер
+# http://127.0.0.1:8000/docs
+
+# http://localhost:3000/home
 
 
 posts = [
@@ -199,6 +214,17 @@ app.add_middleware(
     allow_headers=["*"],  # разрешаем любые заголовки
 )
 
+# Создание асинхронного подключения
+engine = create_async_engine(DATABASE_URL, echo=True)
+AsyncSessionLocal = sessionmaker(bind=engine, class_=AsyncSession, expire_on_commit=False)
+
+# Зависимость для получения асинхронной сессии
+async def get_db() -> AsyncSession:
+    async with AsyncSessionLocal() as session:
+        yield session
+
+
+# ПОСТЫ
 # получить посты
 @app.get("/posts")
 def get_posts():
@@ -219,10 +245,99 @@ async def invert_image(file: UploadFile = File(...)):
     img_byte_arr.seek(0)
     return StreamingResponse(img_byte_arr, media_type="image/png")
 
+# создать страницу
+@app.post("/create-page/")
+async def create_page(name: str, session: AsyncSession = Depends(get_db)):
+    query = select(pages).where(pages.c.name == name)
+    existing_page = await session.execute(query)
+    if existing_page.scalar():
+        raise HTTPException(status_code=400, detail="Страница с таким именем уже существует.")
 
+    # Создание новой страницы
+    new_page = {
+        "name": name
+    }
+    await session.execute(pages.insert().values(new_page))
+    await session.commit()
 
-# Старт
-# uvicorn main:app --reload
+    # Получение ID новой страницы
+    new_page_id = await session.execute(select(pages.c.id).where(pages.c.name == name))
+    new_page_id = new_page_id.scalar()
 
-# Свагер
-# http://127.0.0.1:8000/docs
+    # Создание записи KPI для новой страницы
+    new_kpi = {
+        "link": str(new_page_id),
+        "count": 0  # Начальное значение count
+    }
+    await session.execute(kpi.insert().values(new_kpi))
+    await session.commit()
+
+    return {"id": new_page_id, "name": name}
+
+@app.get("/get-page/{page_id}/")
+async def get_page(page_id: int, session: AsyncSession = Depends(get_db)):
+    query = await session.execute(select(pages).where(pages.c.id == page_id))
+    page = query.scalar_one_or_none()
+    if page:
+        return {"id": page.id, "name": page.name}
+    return {"message": "Page not found"}
+
+@app.post("/update-time-page/")
+async def update_time_page(
+    page_id: int = Body(...),
+    time_spent: int = Body(...),
+    session: AsyncSession = Depends(get_db)
+):
+    print(page_id, time_spent)
+
+    # Получаем текущую запись в таблице kpi по page_id
+    query = select(kpi).where(kpi.c.link == str(page_id))
+    result = await session.execute(query)
+    kpi_entry = result.fetchone()  # Получаем строку
+
+    if not kpi_entry:
+        raise HTTPException(status_code=404, detail="Page not found")
+
+    # Извлекаем данные из записи
+    current_count = kpi_entry[2]  # Индекс 2 соответствует столбцу 'count'
+    current_time_spent = kpi_entry[3] if len(kpi_entry) > 3 else 0  # Индекс 3 соответствует 'countSec'
+
+    # Обновляем счетчик и время
+    new_count = current_count + 1  # Увеличиваем счетчик посещений
+    new_time_spent = current_time_spent + time_spent  # Обновляем общее время
+
+    # Обновляем запись
+    update_stmt = (
+        update(kpi)
+        .where(kpi.c.link == str(page_id))
+        .values(count=new_count, countSec=new_time_spent, date_at=func.now())  # Обновляем countSec
+    )
+    await session.execute(update_stmt)
+    await session.commit()
+
+    return {"message": "Time and count updated successfully"}
+
+@app.get("/kpi/")
+async def get_kpi(session: AsyncSession = Depends(get_db)):
+    # Создаем join между таблицами kpi и pages
+    stmt = (
+        select(kpi.c.link, kpi.c.count, kpi.c.countSec, kpi.c.date_at, pages.c.name)
+        .select_from(
+            join(kpi, pages, kpi.c.link.cast(Integer) == pages.c.id)  # Приведение kpi.link к Integer
+        )
+    )
+    
+    result = await session.execute(stmt)
+    kpis = result.fetchall()  # Получаем все строки
+
+    # Формируем и возвращаем ответ
+    return [
+        {
+            "page_name": k[4],  # Имя страницы из pages (индекс 4)
+            "link": k[0],       # Ссылка из kpi
+            "count": k[1],      # Количество посещений из kpi
+            "countSec": k[2],   # Количество секунд из kpi
+            "date_at": k[3],    # Дата последнего обновления из kpi
+        }
+        for k in kpis
+    ]

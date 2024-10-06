@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { connect } from 'react-redux';
 import { fetchApiAction, loadingApiAction } from '../../Store/api';
+import { updatePageAction } from '../../Store/main';
 
 import ApiPage from './ApiPage';
 
@@ -16,6 +17,9 @@ function mapDispatchToProps(dispatch) {
     fetchApi: (data) => {
       dispatch(fetchApiAction(data));
       dispatch(loadingApiAction(true));
+    },
+    updateTime: (data) => {
+      dispatch(updatePageAction(data));
     },
   };
 }

@@ -9,6 +9,7 @@ import { all } from 'redux-saga/effects';
 import main from './main';
 import post from './post';
 import api from './api';
+import statisctic from './statisctic';
 
 /**
  * Объединяет все саги из сторов
@@ -21,6 +22,7 @@ function* rootSaga(...args) {
 
     post.rootSaga(...args),
     api.rootSaga(...args),
+    statisctic.rootSaga(...args),
   ]);
 }
 
@@ -58,6 +60,7 @@ export default function configureStore(history, host) {
     main: main.reducer,
     post: post.reducer,
     api: api.reducer,
+    statisctic: statisctic.reducer,
   });
 
   const sagaMiddleware = createSagaMiddleware();

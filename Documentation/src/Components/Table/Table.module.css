@@ -1,0 +1,26 @@
+.root {
+  width: 100%;
+  border-collapse: collapse;
+}
+.root, .root th, .root td {
+  border: 2px solid var(--color-blue-6);
+}
+.root th, .root td {
+  padding: 10px;
+  text-align: left;
+}
+.root th {
+  background-color: var(--color-blue-7);
+  color: var(--color-white);
+}
+.root tr:nth-child(even) {
+  background-color: #c6d7eec7;
+}
+
+.root tbody tr {
+  transition: 0.4s;
+}
+.root tbody tr:hover {
+  opacity: 0.9;
+  background-color: #c6d7eec7;
+}

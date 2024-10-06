@@ -1,11 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 import Title from '../../Components/Title';
 import List from '../../Components/List';
 
 import styles from './DescriptionPage.module.css';
 
-function DescriptionPage() {
+function DescriptionPage({ updateTime }) {
+  useEffect(() => {
+    const date = new Date();
+
+    return () => {
+      const dateEnd = new Date();
+      const differenceInMilliseconds = dateEnd - date;
+      const differenceInSeconds = differenceInMilliseconds / 1000;
+      updateTime({ page_id: 14, time_spent: Math.floor(differenceInSeconds) });
+    };
+  }, []);
+
   return (
     <div>
       <Title>Описание</Title>
@@ -105,5 +117,13 @@ function DescriptionPage() {
     </div>
   );
 }
+
+DescriptionPage.propTypes = {
+  updateTime: PropTypes.func,
+};
+
+DescriptionPage.defaultProps = {
+  updateTime: () => {},
+};
 
 export default DescriptionPage;

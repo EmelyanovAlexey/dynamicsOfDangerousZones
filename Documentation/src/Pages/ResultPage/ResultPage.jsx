@@ -1,11 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 import Title from '../../Components/Title';
 import List from '../../Components/List';
 
 import styles from './ResultPage.module.css';
 
-function ResultPage() {
+function ResultPage({ updateTime }) {
+  useEffect(() => {
+    const date = new Date();
+
+    return () => {
+      const dateEnd = new Date();
+      const differenceInMilliseconds = dateEnd - date;
+      const differenceInSeconds = differenceInMilliseconds / 1000;
+      updateTime({ page_id: 15, time_spent: Math.floor(differenceInSeconds) });
+    };
+  }, []);
+
   return (
     <div>
       <Title>Заключение</Title>
@@ -42,5 +54,13 @@ function ResultPage() {
     </div>
   );
 }
+
+ResultPage.propTypes = {
+  updateTime: PropTypes.func,
+};
+
+ResultPage.defaultProps = {
+  updateTime: () => {},
+};
 
 export default ResultPage;

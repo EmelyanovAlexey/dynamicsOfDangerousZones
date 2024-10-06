@@ -1,0 +1,11 @@
+.description {
+  margin-bottom: 20px;
+  padding: 20px;
+  border-left: 4px solid var(--color-blue-1);
+  width: 100%;
+  background-color: #fff;
+
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(34, 60, 80, 0.3);
+  -moz-box-shadow: 0px 0px 15px 0px rgba(34, 60, 80, 0.3);
+  box-shadow: 0px 0px 15px 0px rgba(34, 60, 80, 0.3);
+}

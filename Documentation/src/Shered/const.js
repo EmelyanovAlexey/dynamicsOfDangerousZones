@@ -29,6 +29,19 @@ export const ROUTER_LIST = [
     href: '/result',
     icon: 'Result',
   },
+  {
+    id: 'statistic',
+    title: 'Статистика',
+    href: '/statistic',
+    icon: 'Post',
+  },
+];
+
+export const statisticHeader = [
+  'Имя страницы',
+  'Количество посещений',
+  'Время на странице',
+  'Последнее посещений',
 ];
 
 export default {};

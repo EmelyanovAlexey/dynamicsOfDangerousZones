@@ -1,10 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 import Title from '../../Components/Title';
 
 import styles from './HomePage.module.css';
 
-function HomePage() {
+function HomePage({ updateTime }) {
+  useEffect(() => {
+    const date = new Date();
+
+    return () => {
+      const dateEnd = new Date();
+      const differenceInMilliseconds = dateEnd - date;
+      const differenceInSeconds = differenceInMilliseconds / 1000;
+      updateTime({ page_id: 13, time_spent: Math.floor(differenceInSeconds) });
+    };
+  }, []);
+
   return (
     <div>
       <Title>Введение</Title>
@@ -23,5 +35,13 @@ function HomePage() {
     </div>
   );
 }
+
+HomePage.propTypes = {
+  updateTime: PropTypes.func,
+};
+
+HomePage.defaultProps = {
+  updateTime: () => {},
+};
 
 export default HomePage;
