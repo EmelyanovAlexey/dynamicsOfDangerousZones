@@ -19,14 +19,6 @@ config.set_section_option(section, "DB_HOST", DB_HOST)
 config.set_section_option(section, "DB_POST", DB_POST)
 config.set_section_option(section, "DB_NAME", DB_NAME)
 
-# print('asdasdasdsadsadsaasdsaddsa\n\n\n')
-# print(DB_USER)
-# print(DB_PASS)
-# print(DB_HOST)
-# print(DB_POST)
-# print(DB_NAME)
-# print('\n\n\nasdasdasdsadsadsaasdsaddsa')
-
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.
 if config.config_file_name is not None:

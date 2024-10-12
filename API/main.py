@@ -319,25 +319,23 @@ async def update_time_page(
 
 @app.get("/kpi/")
 async def get_kpi(session: AsyncSession = Depends(get_db)):
-    # Создаем join между таблицами kpi и pages
     stmt = (
         select(kpi.c.link, kpi.c.count, kpi.c.countSec, kpi.c.date_at, pages.c.name)
         .select_from(
-            join(kpi, pages, kpi.c.link.cast(Integer) == pages.c.id)  # Приведение kpi.link к Integer
+            join(kpi, pages, kpi.c.link.cast(Integer) == pages.c.id)
         )
     )
     
     result = await session.execute(stmt)
     kpis = result.fetchall()  # Получаем все строки
 
-    # Формируем и возвращаем ответ
     return [
         {
-            "page_name": k[4],  # Имя страницы из pages (индекс 4)
-            "link": k[0],       # Ссылка из kpi
-            "count": k[1],      # Количество посещений из kpi
-            "countSec": k[2],   # Количество секунд из kpi
-            "date_at": k[3],    # Дата последнего обновления из kpi
+            "page_name": k[4], 
+            "link": k[0],
+            "count": k[1],
+            "countSec": k[2],
+            "date_at": k[3],
         }
         for k in kpis
     ]
