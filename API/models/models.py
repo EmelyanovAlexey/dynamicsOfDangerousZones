@@ -1,4 +1,6 @@
 from datetime import datetime
+from sqlalchemy import ForeignKey
+from sqlalchemy.dialects.postgresql import BYTEA
 from sqlalchemy import MetaData, Table, Column, Integer, String, TIMESTAMP
 
 metadata = MetaData()
@@ -32,4 +34,22 @@ kpi = Table(
     Column("count", Integer, nullable=False, default=0),
     Column("countSec", Integer, nullable=False, default=0),
     Column("date_at", TIMESTAMP, default=datetime.utcnow),
+)
+
+# Таблица roles
+roles = Table(
+    "roles",
+    metadata,
+    Column("id", Integer, primary_key=True),
+    Column("name", String, nullable=False),
+)
+
+# Таблица users
+users = Table(
+    "users",
+    metadata,
+    Column("id", Integer, primary_key=True),
+    Column("email", String, nullable=False, unique=True),
+    Column("password", BYTEA, nullable=False),  # хэшируем пароль
+    Column("role_id", Integer, ForeignKey("roles.id")),
 )

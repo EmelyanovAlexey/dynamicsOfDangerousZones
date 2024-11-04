@@ -39,10 +39,10 @@ export const updatePageAction = createAction(
   UPDATE_INFO_TIME_TYPE,
   (param) => ({
     request: {
-      url: `/update-time-page/`, // URL для POST-запроса
-      method: 'POST', // Метод POST
-      responseType: 'json', // Ожидаем JSON ответ
-      data: param, // Отправляем параметры
+      url: `/update-time-page/`,
+      method: 'POST',
+      responseType: 'json',
+      data: param,
     },
     meta: {
       onRequest: () => {

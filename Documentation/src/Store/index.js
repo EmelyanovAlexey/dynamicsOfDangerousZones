@@ -10,6 +10,7 @@ import main from './main';
 import post from './post';
 import api from './api';
 import statisctic from './statisctic';
+import auth from './auth';
 
 /**
  * Объединяет все саги из сторов
@@ -23,6 +24,7 @@ function* rootSaga(...args) {
     post.rootSaga(...args),
     api.rootSaga(...args),
     statisctic.rootSaga(...args),
+    auth.rootSaga(...args),
   ]);
 }
 
@@ -61,6 +63,7 @@ export default function configureStore(history, host) {
     post: post.reducer,
     api: api.reducer,
     statisctic: statisctic.reducer,
+    auth: auth.reducer,
   });
 
   const sagaMiddleware = createSagaMiddleware();
