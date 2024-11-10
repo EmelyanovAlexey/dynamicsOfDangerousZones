@@ -6,7 +6,7 @@ import { ConnectedRouter } from 'connected-react-router';
 
 import reportWebVitals from './reportWebVitals';
 import configureStore from './Store';
-import App from './App';
+import AppContainer from './Containers/AppContainer';
 import createAPIHost from './Utils/createAPIHost';
 
 import './index.css';
@@ -18,7 +18,7 @@ function initializeApplication() {
     <React.StrictMode>
       <Provider store={store}>
         <ConnectedRouter history={history}>
-          <App />
+          <AppContainer />
         </ConnectedRouter>
       </Provider>
     </React.StrictMode>,

@@ -1,7 +1,9 @@
+/* eslint-disable camelcase */
 /* eslint-disable no-debugger */
 /* eslint-disable no-unused-vars */
 import { put } from 'redux-saga/effects';
 import { createAction, createReducer } from 'redux-smart-actions';
+import { parseJWT } from '../Utils/JWT';
 
 import { createActionType } from '../Utils';
 import { addStatusPageAction } from './main';
@@ -43,6 +45,7 @@ export const authAction = createAction(FETCH_AUTH_TYPE, (data) => ({
     onSuccess: (response, action, store) => {
       const { dispatch } = store;
       dispatch(loadingAction(false));
+      dispatch(saveUserAction({ ...response.data, email: data.email }));
       dispatch(
         addStatusPageAction({
           title: 'Успешно',
@@ -54,11 +57,11 @@ export const authAction = createAction(FETCH_AUTH_TYPE, (data) => ({
     },
     onError: (status, err, store) => {
       const { dispatch } = store;
-      console.log(err);
+      const errorMessage = err?.response?.data?.detail || 'Вы не авторизованы';
       dispatch(
         addStatusPageAction({
           title: 'Ошибка',
-          description: 'Данные не верны',
+          description: errorMessage,
           status: 'error',
         }),
       );
@@ -81,6 +84,7 @@ export const registrationAction = createAction(FETCH_REG_TYPE, (data) => ({
     onSuccess: (response, action, store) => {
       const { dispatch } = store;
       dispatch(loadingAction(false));
+      dispatch(saveUserAction({ ...response.data, email: data.email }));
       dispatch(
         addStatusPageAction({
           title: 'Успешно',
@@ -125,16 +129,20 @@ const reducer = createReducer(
         loading: action.payload,
       };
     },
-    [saveUserAction]: (state, action) => {
+    [loadingAction]: (state, action) => {
       return {
         ...state,
         loading: action.payload,
       };
     },
     [saveUserAction]: (state, action) => {
+      localStorage.setItem('AUTH_DATA', JSON.stringify(action.payload));
+
+      const role = parseJWT(action.payload.access_token)?.role;
+
       return {
         ...state,
-        data: action.payload,
+        data: { ...action.payload, role },
       };
     },
   },

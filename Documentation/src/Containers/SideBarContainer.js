@@ -5,7 +5,7 @@ import SideBar from '../Components/SideBar';
 
 function mapStateToProps(state) {
   return {
-    cards: state.main.status,
+    user: state.auth.data,
   };
 }
 

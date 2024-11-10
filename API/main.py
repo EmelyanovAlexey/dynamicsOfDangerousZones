@@ -1,10 +1,12 @@
-from fastapi import FastAPI, UploadFile, HTTPException, Depends, Body, File
+from fastapi import FastAPI, UploadFile, HTTPException, Depends, Body, File, Header
 from fastapi.responses import StreamingResponse
 from fastapi.middleware.cors import CORSMiddleware
 
 from sqlalchemy import select, insert, update, join, Integer
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.sql import func
+from jose import jwt, ExpiredSignatureError, JWTError
+from datetime import datetime, timezone
 
 # Models
 from models.models import pages, kpi, users
@@ -59,39 +61,86 @@ async def register(user_data: UserCreate, session: AsyncSession = Depends(get_db
     await session.commit()
 
     access_token = create_access_token(data={"user": user_data.email, "role": 1})
-    return {"access_token": access_token, "token_type": "bearer"}
+    
+    return {"access_token": access_token, "token_type": "Bearer"}
 
-# {
-#   "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhbGV4IiwiZXhwIjoxNzMwNzM4MjM0fQ.uFfaFbu7ByJkfuhmwUe3Abkv0c9pX1FZHYmFJinv1-Y",
-#   "token_type": "bearer"
-# }
 
 @app.post("/login", response_model=Token)
 async def login(user_data: UserLogin, session: AsyncSession = Depends(get_db)):
     query = select(users).where(users.c.email == user_data.email)
     existing_user = await session.execute(query)
-    user_result = existing_user.scalar()
+    user_result = existing_user.first()  # выбирает запись или None
 
     if not user_result:
         raise HTTPException(status_code=400, detail=f"Пользователь {user_data.email} не существует.")
 
-    print('================================================')
-    # print(hashed_password)
-    print('================================================')
+    hashed_password = user_result[2]
 
-    # # Проверяем правильность пароля
-    # if not verify_password(user_data.password, hashed_password):
-    #     raise HTTPException(status_code=400, detail="Неверные пароль")
+    if not verify_password(user_data.password, hashed_password):
+        raise HTTPException(status_code=400, detail="Неверные пароль")
     
-    access_token = create_access_token(data={"user": user_data.email, "role": 1})
-    return {"access_token": access_token, "token_type": "bearer"}
+    access_token = create_access_token(data={"user": user_data.email, "role": user_result[3]})
+
+    return {"access_token": access_token, "token_type": "Bearer"}
+
+@app.post("/update-role")
+async def update_role(email: str, new_role_id: int, session: AsyncSession = Depends(get_db)):
+    query = update(users).where(users.c.email == email).values(role_id=new_role_id)
+    await session.execute(query)
+    await session.commit()
+    
+    return {"message": f"Роль пользователя с email {email} успешно обновлена до {new_role_id}"}
+
 # ======================================================================================
 
+
+def parse_jwt_token(authorization: str = Header(None)):
+    if authorization is None or not authorization.startswith("Bearer "):
+        raise HTTPException(
+            status_code=401,
+            detail="Invalid or missing Authorization header",
+        )
+    
+    # Убираем префикс 'Bearer ' и получаем сам токен
+    token = authorization.split(" ")[1]
+    
+    try:
+        # Извлекаем полезную нагрузку (payload) без проверки подписи
+        payload = jwt.get_unverified_claims(token)
+        
+        # Проверяем наличие поля exp
+        exp = payload.get("exp")
+        if exp is None:
+            raise HTTPException(
+                status_code=401,
+                detail="Token missing expiration (exp) claim",
+            )
+        
+        # Конвертируем exp в datetime
+        exp_datetime = datetime.fromtimestamp(exp, tz=timezone.utc)
+
+        print(exp_datetime, datetime.now(tz=timezone.utc), datetime.now(tz=timezone.utc) >= exp_datetime)
+        
+        # Сравниваем текущую дату с exp
+        if datetime.now(tz=timezone.utc) >= exp_datetime:
+            raise HTTPException(
+                status_code=401,
+                detail="Token has expired",
+            )
+        
+    except Exception as e:
+        raise HTTPException(
+            status_code=401,
+            detail="Invalid token format",
+        )
+
+    return payload  # Возвращаем полезную нагрузку токена
 
 # ПОСТЫ
 # получить посты
 @app.get("/posts")
-def get_posts():
+def get_posts(authorization: str = Header(None)):
+    parse_jwt_token(authorization)
     return getPost()
 
 # получить пост по id
@@ -147,8 +196,6 @@ async def update_time_page(
     time_spent: int = Body(...),
     session: AsyncSession = Depends(get_db)
 ):
-    print(page_id, time_spent)
-
     # Получаем текущую запись в таблице kpi по page_id
     query = select(kpi).where(kpi.c.link == str(page_id))
     result = await session.execute(query)

@@ -34,6 +34,16 @@ function* rootSaga(...args) {
  * @param {String} host API хост
  */
 export default function configureStore(history, host) {
+  const AUTHORIZATION_HEADER = 'Authorization';
+
+  const storedAuthDataText = localStorage.getItem('AUTH_DATA');
+  let storedAuthData = '';
+
+  if (storedAuthDataText) {
+    storedAuthData = JSON.parse(storedAuthDataText);
+    storedAuthData = storedAuthData?.access_token;
+  }
+
   const axiosInstance = axios.create({
     baseURL: host,
     withCredentials: true,
@@ -46,6 +56,7 @@ export default function configureStore(history, host) {
         ...config.headers,
         common: {
           ...config.headers.common,
+          [AUTHORIZATION_HEADER]: `Bearer ${storedAuthData}`,
         },
       },
     };
